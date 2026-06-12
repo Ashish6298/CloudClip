@@ -11,12 +11,23 @@ const allowedOrigins = config.CLIENT_URL
 
 const corsOptions = {
   origin: (origin, callback) => {
-    // Allow requests with no origin (e.g. curl, Postman, server-to-server)
+    // Allow requests with no origin (curl, Postman, mobile apps)
     if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) return callback(null, true);
-    callback(new Error(`CORS: Origin '${origin}' not allowed`));
+    // Allow any origin that matches the allowed list, OR any vercel.app subdomain
+    if (
+      allowedOrigins.includes(origin) ||
+      /^https:\/\/.*\.vercel\.app$/.test(origin) ||
+      origin === 'http://localhost:5173' ||
+      origin === 'http://localhost:3000'
+    ) {
+      return callback(null, true);
+    }
+    // For unrecognised origins, still allow (public tool) but log it
+    console.warn(`CORS: Allowing unlisted origin: ${origin}`);
+    return callback(null, true);
   },
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  credentials: false
 };
 const corsMiddleware = cors(corsOptions);
 
