@@ -99,26 +99,26 @@ CloudClip/
 
   <table align="center">
     <tr>
-      <td align="center">
+      <td align="center" style="border: none;">
         <a href="mailto:ashishgoswami6298@gmail.com">
-          <img src="https://img.shields.io/badge/Email-ashishgoswami6298%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
+          <img src="./btn_email.svg" width="200" alt="Email Ashish"/>
         </a>
       </td>
-      <td align="center">
+      <td align="center" style="border: none;">
         <a href="https://github.com/Ashish6298">
-          <img src="https://img.shields.io/badge/GitHub-Ashish6298-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+          <img src="./btn_github.svg" width="200" alt="GitHub Profile"/>
         </a>
       </td>
     </tr>
     <tr>
-      <td align="center">
+      <td align="center" style="border: none;">
         <a href="https://www.linkedin.com/in/ashish-goswami-58797a24a/">
-          <img src="https://img.shields.io/badge/LinkedIn-Ashish%20Goswami-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+          <img src="./btn_linkedin.svg" width="200" alt="LinkedIn"/>
         </a>
       </td>
-      <td align="center">
+      <td align="center" style="border: none;">
         <a href="https://github.com/Ashish6298">
-          <img src="https://img.shields.io/badge/Portfolio-Visit%20My%20Work-6366F1?style=for-the-badge&logo=world&logoColor=white" alt="Portfolio"/>
+          <img src="./btn_portfolio.svg" width="200" alt="Portfolio"/>
         </a>
       </td>
     </tr>

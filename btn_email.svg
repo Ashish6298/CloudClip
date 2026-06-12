@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" width="220" height="44" style="background: transparent;">
+  <defs>
+    <linearGradient id="emailGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ea4335" />
+      <stop offset="100%" stop-color="#b21e13" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#ea4335" flood-opacity="0.25" />
+    </filter>
+  </defs>
+  <!-- 3D Shadow Depth -->
+  <rect x="0" y="3" width="220" height="40" rx="10" fill="#600f09" />
+  <!-- Top Face Layer -->
+  <rect x="0" y="0" width="220" height="40" rx="10" fill="url(#emailGrad)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2" filter="url(#glow)" />
+  <!-- Envelope Icon -->
+  <path d="M26 14 h20 v12 h-20 z M26 14 l10 8 l10 -8" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Title Text -->
+  <text x="62" y="24" fill="#ffffff" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="11" font-weight="900" letter-spacing="1.5">EMAIL ME</text>
+</svg>

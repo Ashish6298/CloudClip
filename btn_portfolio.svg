@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" width="220" height="44" style="background: transparent;">
+  <defs>
+    <linearGradient id="portfolioGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#6366f1" flood-opacity="0.25" />
+    </filter>
+  </defs>
+  <!-- 3D Shadow Depth -->
+  <rect x="0" y="3" width="220" height="40" rx="10" fill="#201b7a" />
+  <!-- Top Face Layer -->
+  <rect x="0" y="0" width="220" height="40" rx="10" fill="url(#portfolioGrad)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.2" filter="url(#glow)" />
+  <!-- Globe Web Icon -->
+  <circle cx="36" cy="22" r="9" fill="none" stroke="#ffffff" stroke-width="2" />
+  <ellipse cx="36" cy="22" rx="4" ry="9" fill="none" stroke="#ffffff" stroke-width="1.5" />
+  <line x1="27" y1="22" x2="45" y2="22" stroke="#ffffff" stroke-width="1.5" />
+  <!-- Title Text -->
+  <text x="62" y="24" fill="#ffffff" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif" font-size="11" font-weight="900" letter-spacing="1.5">MY PORTFOLIO</text>
+</svg>
