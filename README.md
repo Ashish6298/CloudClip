@@ -11,6 +11,7 @@
 ## 🚀 Key Features
 
 *   **💎 Premium UI & Design**: Built with a curating Light Theme as default, featuring smooth 3D parallax hover cards, high-contrast layouts, and floating background composition auras.
+*   **👨‍💻 Developer Integration Modal**: Seamlessly integrated profile information modal showcasing developer details (Name, Email, LinkedIn, and GitHub) accessible directly from the header actions.
 *   **⚡ Node-Powered YouTube Signature Bypass**: Integrated with specific `node` JS-runtimes and remote components directly solving complex YouTube challenge checks.
 *   **🛠️ Background Stream Merging (Muxer)**: Initiates separate high-definition video and audio streaming queues, merging them on-the-fly using background child processes.
 *   **🔒 Security & Privacy-First**: Includes automatic backend temp folder sweepers running every 10 minutes, rate limiting, and parameter verification.
