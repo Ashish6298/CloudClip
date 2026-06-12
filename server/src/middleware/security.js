@@ -4,9 +4,18 @@ const rateLimit = require('express-rate-limit');
 const config = require('../config/config');
 const { SUPPORTED_DOMAINS, ERROR_CODES } = require('../../../shared/constants/constants.json');
 
-// Setup CORS
+// Parse CLIENT_URL as comma-separated list to support multiple origins (localhost + Vercel)
+const allowedOrigins = config.CLIENT_URL
+  ? config.CLIENT_URL.split(',').map(o => o.trim())
+  : ['http://localhost:5173'];
+
 const corsOptions = {
-  origin: config.CLIENT_URL,
+  origin: (origin, callback) => {
+    // Allow requests with no origin (e.g. curl, Postman, server-to-server)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    callback(new Error(`CORS: Origin '${origin}' not allowed`));
+  },
   optionsSuccessStatus: 200
 };
 const corsMiddleware = cors(corsOptions);
