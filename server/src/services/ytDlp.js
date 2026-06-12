@@ -28,8 +28,10 @@ function getMetadata(url) {
     }
 
     // Run yt-dlp --dump-json --no-playlist
+    // --js-runtimes node  → use Node.js to solve YouTube's n-challenge / signature
+    // --extractor-args    → force web client to avoid throttled API responses
     const cookiesArg = fs.existsSync(cookiesPath) ? `--cookies "${cookiesPath}"` : '';
-    const cmd = `yt-dlp ${cookiesArg} --dump-json --no-playlist "${url.replace(/"/g, '\\"')}"`;
+    const cmd = `yt-dlp ${cookiesArg} --js-runtimes node --extractor-args "youtube:player_client=web" --dump-json --no-playlist "${url.replace(/"/g, '\\"')}"`;
     
     // Increase maxBuffer to 15MB to handle very large metadata JSONs
     exec(cmd, { maxBuffer: 15 * 1024 * 1024 }, (error, stdout, stderr) => {
@@ -187,6 +189,10 @@ function startDownload(jobId, url, formatId, type) {
   if (fs.existsSync(cookiesPath)) {
     args.push('--cookies', cookiesPath);
   }
+
+  // Use Node.js runtime for YouTube signature/n-challenge solving
+  args.push('--js-runtimes', 'node');
+  args.push('--extractor-args', 'youtube:player_client=web');
 
   // Construct arguments
   if (type === 'audio') {
