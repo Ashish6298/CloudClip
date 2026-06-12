@@ -1,6 +1,4 @@
-const API_BASE = import.meta.env.DEV 
-  ? 'http://localhost:5000/api' 
-  : '/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'https://cloudclip-vop8.onrender.com/api';
 
 /**
  * Handle API responses and throw parsed errors.
