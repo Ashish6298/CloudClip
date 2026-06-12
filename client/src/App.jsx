@@ -94,7 +94,7 @@ function AppContent() {
       {/* Header Panel */}
       <header className="header">
         <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <img src="/logo.png" alt="CloudClip Logo" style={{ height: '28px', width: 'auto', objectFit: 'contain' }} />
+          <img src="/logo.png" alt="CloudClip Logo" style={{ height: '38px', width: 'auto', objectFit: 'contain' }} />
           CloudClip
         </a>
         <div className="header-actions">
