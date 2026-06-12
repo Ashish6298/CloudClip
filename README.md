@@ -3,25 +3,8 @@
 </p>
 
 <p align="center">
-  <img src="./dev_card.svg" alt="CloudClip Details & Developer Card" width="100%">
+  <img src="./badges.svg" alt="CloudClip Badges & Info" width="100%">
 </p>
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">📧 <b>Gmail / Email</b></td>
-      <td align="center">💼 <b>LinkedIn</b></td>
-      <td align="center">🌐 <b>Portfolio</b></td>
-      <td align="center">🐙 <b>GitHub</b></td>
-    </tr>
-    <tr>
-      <td align="center"><a href="mailto:ashishgoswami6298@gmail.com">ashishgoswami6298@gmail.com</a></td>
-      <td align="center"><a href="https://www.linkedin.com/in/ashish-goswami-58797a24a/">ashish-goswami-58797a24a</a></td>
-      <td align="center"><a href="https://portfolio-omega-sand-67.vercel.app/">ashish-goswami-portfolio</a></td>
-      <td align="center"><a href="https://github.com/Ashish6298">Ashish6298</a></td>
-    </tr>
-  </table>
-</div>
 
 ---
 
