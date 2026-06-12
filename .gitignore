@@ -13,6 +13,10 @@ client/dist/
 server/.env
 server/.env.local
 
+# YouTube cookies (sensitive - never commit)
+cookies.txt
+server/cookies.txt
+
 # Local temporary downloads directory
 server/downloads/
 downloads/
