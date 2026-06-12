@@ -84,3 +84,44 @@ CloudClip/
 | `/api/download/status/:jobId` | `GET` | *None* | Polls active download and merge progress |
 | `/api/download/file/:jobId` | `GET` | *None* | Downloads completed file and triggers automated server cleanup |
 | `/api/download/cancel/:jobId` | `POST` | *None* | Kills active processes and sweeps temporary chunks |
+
+---
+
+## 👨‍💻 Developed By
+
+<div align="center">
+  <img src="https://github.com/Ashish6298.png" width="120" height="120" style="border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 3px solid #6366f1;" alt="Ashish Goswami"/>
+  
+  ### **Ashish Goswami**
+  *Flutter & Fullstack Developer*
+
+  > "Turning complex backend logic and wireframes into elegant, high-performance digital experiences." 🚀
+
+  <table align="center">
+    <tr>
+      <td align="center">
+        <a href="mailto:ashishgoswami6298@gmail.com">
+          <img src="https://img.shields.io/badge/Email-ashishgoswami6298%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Ashish6298">
+          <img src="https://img.shields.io/badge/GitHub-Ashish6298-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://www.linkedin.com/in/ashish-goswami-58797a24a/">
+          <img src="https://img.shields.io/badge/LinkedIn-Ashish%20Goswami-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/Ashish6298">
+          <img src="https://img.shields.io/badge/Portfolio-Visit%20My%20Work-6366F1?style=for-the-badge&logo=world&logoColor=white" alt="Portfolio"/>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
