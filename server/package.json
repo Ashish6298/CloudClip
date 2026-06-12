@@ -5,6 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
+    "build": "bash render-build.sh",
     "dev": "nodemon src/server.js",
     "test": "jest --runInBand --detectOpenHandles"
   },
