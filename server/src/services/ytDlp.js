@@ -28,10 +28,9 @@ function getMetadata(url) {
     }
 
     // Run yt-dlp --dump-json --no-playlist
-    // --js-runtimes node  → use Node.js to solve YouTube's n-challenge / signature
-    // --extractor-args    → force web client to avoid throttled API responses
-    const cookiesArg = fs.existsSync(cookiesPath) ? `--cookies "${cookiesPath}"` : '';
-    const cmd = `yt-dlp ${cookiesArg} --js-runtimes node --extractor-args "youtube:player_client=web" --dump-json --no-playlist "${url.replace(/"/g, '\\"')}"`;
+    // tv_embedded + ios clients bypass YouTube's bot detection on datacenter IPs
+    // without requiring cookies (which get invalidated by YouTube on server deployments)
+    const cmd = `yt-dlp --js-runtimes node --extractor-args "youtube:player_client=tv_embedded,ios" --dump-json --no-playlist "${url.replace(/"/g, '\\"')}"`;
     
     // Increase maxBuffer to 15MB to handle very large metadata JSONs
     exec(cmd, { maxBuffer: 15 * 1024 * 1024 }, (error, stdout, stderr) => {
@@ -185,14 +184,10 @@ function startDownload(jobId, url, formatId, type) {
   const outputTemplate = path.join(config.DOWNLOAD_DIR, `${jobId}.%(ext)s`);
   const args = [];
 
-  // Pass cookies file if available (required for YouTube on hosted servers)
-  if (fs.existsSync(cookiesPath)) {
-    args.push('--cookies', cookiesPath);
-  }
-
-  // Use Node.js runtime for YouTube signature/n-challenge solving
+  // tv_embedded + ios clients bypass YouTube's bot detection on datacenter IPs
+  // without requiring cookies (which get invalidated by YouTube on server deployments)
   args.push('--js-runtimes', 'node');
-  args.push('--extractor-args', 'youtube:player_client=web');
+  args.push('--extractor-args', 'youtube:player_client=tv_embedded,ios');
 
   // Construct arguments
   if (type === 'audio') {
