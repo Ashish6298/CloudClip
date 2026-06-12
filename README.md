@@ -2,15 +2,25 @@
   <img src="./banner.svg" alt="CloudClip Banner" width="100%">
 </p>
 
+<p align="center">
+  <img src="./dev_card.svg" alt="CloudClip Details & Developer Card" width="100%">
+</p>
+
 <div align="center">
-
-  [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-  [![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-  [![Express](https://img.shields.io/badge/Express-4.21-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
-  [![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
-  [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-  <p>A production-ready, full-stack media extraction platform designed for fast, high-quality downloads and stream conversions. Powered by <code>yt-dlp</code> with JavaScript signature solvings and <code>ffmpeg</code> stream muxers.</p>
+  <table>
+    <tr>
+      <td align="center">📧 <b>Gmail / Email</b></td>
+      <td align="center">💼 <b>LinkedIn</b></td>
+      <td align="center">🌐 <b>Portfolio</b></td>
+      <td align="center">🐙 <b>GitHub</b></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="mailto:ashishgoswami6298@gmail.com">ashishgoswami6298@gmail.com</a></td>
+      <td align="center"><a href="https://www.linkedin.com/in/ashish-goswami-58797a24a/">ashish-goswami-58797a24a</a></td>
+      <td align="center"><a href="https://portfolio-omega-sand-67.vercel.app/">ashish-goswami-portfolio</a></td>
+      <td align="center"><a href="https://github.com/Ashish6298">Ashish6298</a></td>
+    </tr>
+  </table>
 </div>
 
 ---
