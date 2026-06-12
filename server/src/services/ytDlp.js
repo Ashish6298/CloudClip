@@ -28,9 +28,10 @@ function getMetadata(url) {
     }
 
     // Run yt-dlp --dump-json --no-playlist
-    // tv_embedded + ios clients bypass YouTube's bot detection on datacenter IPs
-    // without requiring cookies (which get invalidated by YouTube on server deployments)
-    const cmd = `yt-dlp --js-runtimes node --extractor-args "youtube:player_client=tv_embedded,ios" --dump-json --no-playlist "${url.replace(/"/g, '\\"')}"`;
+    // android+mweb clients use a different API path less monitored for bot detection
+    // cookies are included as a layered fallback when present
+    const cookiesArg = fs.existsSync(cookiesPath) ? `--cookies "${cookiesPath}"` : '';
+    const cmd = `yt-dlp ${cookiesArg} --js-runtimes node --extractor-args "youtube:player_client=android,mweb" --dump-json --no-playlist "${url.replace(/"/g, '\\"')}"`;
     
     // Increase maxBuffer to 15MB to handle very large metadata JSONs
     exec(cmd, { maxBuffer: 15 * 1024 * 1024 }, (error, stdout, stderr) => {
@@ -184,10 +185,14 @@ function startDownload(jobId, url, formatId, type) {
   const outputTemplate = path.join(config.DOWNLOAD_DIR, `${jobId}.%(ext)s`);
   const args = [];
 
-  // tv_embedded + ios clients bypass YouTube's bot detection on datacenter IPs
-  // without requiring cookies (which get invalidated by YouTube on server deployments)
+  // android+mweb clients use a different API path less monitored for bot detection
   args.push('--js-runtimes', 'node');
-  args.push('--extractor-args', 'youtube:player_client=tv_embedded,ios');
+  args.push('--extractor-args', 'youtube:player_client=android,mweb');
+
+  // Cookies as a layered fallback when present
+  if (fs.existsSync(cookiesPath)) {
+    args.push('--cookies', cookiesPath);
+  }
 
   // Construct arguments
   if (type === 'audio') {
