@@ -93,15 +93,17 @@ function AppContent() {
 
       {/* Header Panel */}
       <header className="header">
-        <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <a href="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
           <img 
             src="/logo.png" 
             alt="CloudClip Logo" 
             style={{ 
-              height: '48px', 
+              height: '64px', 
               width: 'auto', 
               objectFit: 'contain', 
-              WebkitTextFillColor: 'initial' 
+              WebkitTextFillColor: 'initial',
+              marginRight: '-12px',
+              marginLeft: '-10px'
             }} 
           />
           CloudClip
