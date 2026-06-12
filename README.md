@@ -90,8 +90,7 @@ CloudClip/
 ## 👨‍💻 Developed By
 
 <div align="center">
-  <img src="https://github.com/Ashish6298.png" width="120" height="120" style="border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 3px solid #6366f1;" alt="Ashish Goswami"/>
-  
+
   ### **Ashish Goswami**
   *Flutter & Fullstack Developer*
 
