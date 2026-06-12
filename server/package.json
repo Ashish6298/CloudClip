@@ -1,0 +1,36 @@
+{
+  "name": "media-downloader-server",
+  "version": "1.0.0",
+  "description": "Backend server for the Media Downloader",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --runInBand --detectOpenHandles"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "helmet": "^7.1.0",
+    "sanitize-filename": "^1.6.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "supertest": "^6.3.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/../tests/backend"
+    ],
+    "testMatch": [
+      "<rootDir>/../tests/backend/**/*.test.js"
+    ]
+  }
+}
