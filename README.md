@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./badges.svg" alt="CloudClip Badges & Info" width="100%">
+  <img src="./tech_stack.svg" alt="CloudClip Tech Stack" width="100%">
 </p>
 
 ---
