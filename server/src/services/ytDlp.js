@@ -6,6 +6,13 @@ const config = require('../config/config');
 const { JOB_STATUS, ERROR_CODES } = require('../../../shared/constants/constants.json');
 const jobsService = require('./jobs');
 
+// Prepend local bin to PATH if it exists (e.g., on Render deployment)
+const binPath = path.resolve(__dirname, '../../bin');
+if (fs.existsSync(binPath)) {
+  process.env.PATH = `${binPath}${path.delimiter}${process.env.PATH}`;
+  console.log('Prepended local bin to PATH:', binPath);
+}
+
 /**
  * Fetch media metadata using yt-dlp -J.
  */

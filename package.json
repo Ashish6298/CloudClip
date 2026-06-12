@@ -7,6 +7,7 @@
     "setup": "npm install --legacy-peer-deps && npm run install:client && npm run install:server",
     "install:client": "npm install --prefix client --legacy-peer-deps",
     "install:server": "npm install --prefix server --legacy-peer-deps",
+    "build": "bash render-build.sh",
     "dev:server": "npm run dev --prefix server",
     "dev:client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
