@@ -22,6 +22,13 @@ if (!fs.existsSync(config.DOWNLOAD_DIR)) {
   fs.mkdirSync(config.DOWNLOAD_DIR, { recursive: true });
 }
 
+// Write YouTube cookies from env variable to file (required for Render deployment)
+const cookiesPath = path.resolve(__dirname, '../cookies.txt');
+if (process.env.YOUTUBE_COOKIES) {
+  fs.writeFileSync(cookiesPath, process.env.YOUTUBE_COOKIES, 'utf8');
+  console.log('YouTube cookies written to:', cookiesPath);
+}
+
 // Log requests in development
 if (config.NODE_ENV === 'development') {
   app.use((req, res, next) => {

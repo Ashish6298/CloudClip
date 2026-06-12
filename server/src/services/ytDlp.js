@@ -13,6 +13,10 @@ if (fs.existsSync(binPath)) {
   console.log('Prepended local bin to PATH:', binPath);
 }
 
+// Path to cookies file (written from YOUTUBE_COOKIES env var at server startup)
+const cookiesPath = path.resolve(__dirname, '../../cookies.txt');
+const cookiesFlag = fs.existsSync(cookiesPath) ? `--cookies "${cookiesPath}"` : '';
+
 /**
  * Fetch media metadata using yt-dlp -J.
  */
@@ -24,7 +28,8 @@ function getMetadata(url) {
     }
 
     // Run yt-dlp --dump-json --no-playlist
-    const cmd = `yt-dlp --js-runtimes "node" --remote-components "ejs:github" --dump-json --no-playlist "${url.replace(/"/g, '\\"')}"`;
+    const cookiesArg = fs.existsSync(cookiesPath) ? `--cookies "${cookiesPath}"` : '';
+    const cmd = `yt-dlp ${cookiesArg} --dump-json --no-playlist "${url.replace(/"/g, '\\"')}"`;
     
     // Increase maxBuffer to 15MB to handle very large metadata JSONs
     exec(cmd, { maxBuffer: 15 * 1024 * 1024 }, (error, stdout, stderr) => {
@@ -176,10 +181,12 @@ function startDownload(jobId, url, formatId, type) {
   if (!job) return;
 
   const outputTemplate = path.join(config.DOWNLOAD_DIR, `${jobId}.%(ext)s`);
-  const args = [
-    '--js-runtimes', 'node',
-    '--remote-components', 'ejs:github'
-  ];
+  const args = [];
+
+  // Pass cookies file if available (required for YouTube on hosted servers)
+  if (fs.existsSync(cookiesPath)) {
+    args.push('--cookies', cookiesPath);
+  }
 
   // Construct arguments
   if (type === 'audio') {
