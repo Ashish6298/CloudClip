@@ -9,7 +9,7 @@ mkdir -p bin
 
 # 2. Download yt-dlp binary
 echo "Downloading yt-dlp..."
-curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o bin/yt-dlp
+curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux -o bin/yt-dlp
 chmod +x bin/yt-dlp
 
 # 3. Download static ffmpeg / ffprobe binaries
