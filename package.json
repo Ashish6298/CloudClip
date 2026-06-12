@@ -1,0 +1,20 @@
+{
+  "name": "media-downloader-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A professional full-stack media download platform",
+  "scripts": {
+    "setup": "npm install --legacy-peer-deps && npm run install:client && npm run install:server",
+    "install:client": "npm install --prefix client --legacy-peer-deps",
+    "install:server": "npm install --prefix server --legacy-peer-deps",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "test:server": "npm run test --prefix server",
+    "test:client": "npm run test --prefix client",
+    "test": "npm run test:server && npm run test:client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

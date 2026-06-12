@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Production builds
+client/dist/
+
+# Environments and Secrets
+.env
+.env.local
+.env.*.local
+server/.env
+server/.env.local
+
+# Local temporary downloads directory
+server/downloads/
+downloads/
+
+# Testing coverage
+coverage/
+
+# OS metadata and logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+
+# Editor configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

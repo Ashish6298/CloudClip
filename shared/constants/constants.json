@@ -1,0 +1,31 @@
+{
+  "JOB_STATUS": {
+    "PENDING": "pending",
+    "DOWNLOADING": "downloading",
+    "MERGING": "merging",
+    "COMPLETED": "completed",
+    "FAILED": "failed",
+    "CANCELLED": "cancelled"
+  },
+  "SUPPORTED_DOMAINS": [
+    "youtube.com",
+    "youtu.be",
+    "soundcloud.com",
+    "vimeo.com",
+    "tiktok.com",
+    "twitter.com",
+    "x.com",
+    "instagram.com"
+  ],
+  "ERROR_CODES": {
+    "INVALID_URL": "INVALID_URL",
+    "UNSUPPORTED_SITE": "UNSUPPORTED_SITE",
+    "METADATA_FAILED": "METADATA_FAILED",
+    "DOWNLOAD_FAILED": "DOWNLOAD_FAILED",
+    "CONCURRENCY_LIMIT": "CONCURRENCY_LIMIT",
+    "JOB_NOT_FOUND": "JOB_NOT_FOUND",
+    "CLEANED_UP": "CLEANED_UP",
+    "CANCELLED": "CANCELLED",
+    "SERVER_ERROR": "SERVER_ERROR"
+  }
+}
