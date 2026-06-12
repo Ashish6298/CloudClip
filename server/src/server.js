@@ -9,6 +9,9 @@ const { ERROR_CODES } = require('../../shared/constants/constants.json');
 
 const app = express();
 
+// Enable trust proxy so express-rate-limit works behind Render's reverse proxy
+app.set('trust proxy', 1);
+
 // Apply security and parsing middlewares
 app.use(helmetMiddleware);
 app.use(corsMiddleware);
